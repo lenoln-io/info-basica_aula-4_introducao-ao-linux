@@ -1,4 +1,4 @@
-# 🐧 Apresentação Interativa: Introdução ao Linux
+# 🐧 Introdução ao Linux
 
 Uma apresentação web interativa e moderna sobre Linux, desenvolvida para o curso de **Informática Básica - 1° Ano Técnico**. Este projeto oferece uma experiência educativa envolvente com navegação fluida, animações suaves e design responsivo.
 
