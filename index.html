@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introdução ao Linux - Apresentação Interativa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              pastel: {
+                blue: "#E6F3FF",
+                purple: "#F0E6FF",
+                pink: "#FFE6F3",
+                green: "#E6FFE6",
+                yellow: "#FFF9E6",
+                orange: "#FFE6D9",
+                gray: "#F5F7FA",
+              },
+            },
+            animation: {
+              "fade-in": "fadeIn 0.5s ease-in-out",
+              "slide-up": "slideUp 0.6s ease-out",
+              "bounce-soft": "bounceSoft 2s infinite",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-pastel-blue via-pastel-purple to-pastel-pink min-h-screen font-sans"
+  >
+    <!-- Container Principal -->
+    <div class="max-w-6xl mx-auto p-4">
+      <!-- Header com Navegação -->
+      <header
+        class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg mb-6 p-4"
+      >
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold animate-bounce-soft"
+            >
+              🐧
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold text-gray-800">
+                Introdução ao Linux
+              </h1>
+              <p class="text-sm text-gray-600">
+                Informática Básica - 1° Ano Técnico
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <span
+              class="text-sm text-gray-600 bg-pastel-gray px-3 py-1 rounded-full"
+            >
+              <span id="currentSlide">1</span> /
+              <span id="totalSlides">10</span>
+            </span>
+            <button
+              id="prevBtn"
+              class="px-4 py-2 bg-gray-300 text-gray-600 rounded-lg hover:bg-gray-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              ← Anterior
+            </button>
+            <button
+              id="nextBtn"
+              class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Próximo →
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Slides Container -->
+      <main
+        class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden"
+      >
+        <!-- Slide 1: Introdução -->
+        <section
+          class="slide active p-8 min-h-[600px] bg-gradient-to-br from-pastel-blue to-pastel-purple"
+        >
+          <div class="text-center space-y-8 animate-fade-in">
+            <div
+              class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg"
+            >
+              <span class="text-4xl">🐧</span>
+            </div>
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">
+              Bem-vindos ao Mundo Linux!
+            </h2>
+            <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+              Descubra o sistema operacional que revolucionou a computação e
+              alimenta a internet mundial
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+              <div class="bg-white/70 p-6 rounded-xl shadow-md">
+                <div class="text-3xl mb-3">🆓</div>
+                <h3 class="font-semibold text-gray-800">Gratuito</h3>
+                <p class="text-sm text-gray-600">100% livre e sem custos</p>
+              </div>
+              <div class="bg-white/70 p-6 rounded-xl shadow-md">
+                <div class="text-3xl mb-3">🔒</div>
+                <h3 class="font-semibold text-gray-800">Seguro</h3>
+                <p class="text-sm text-gray-600">Proteção robusta integrada</p>
+              </div>
+              <div class="bg-white/70 p-6 rounded-xl shadow-md">
+                <div class="text-3xl mb-3">⚡</div>
+                <h3 class="font-semibold text-gray-800">Rápido</h3>
+                <p class="text-sm text-gray-600">Performance otimizada</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 2: História -->
+        <section
+          class="slide p-8 min-h-[600px] bg-gradient-to-br from-pastel-green to-pastel-yellow"
+        >
+          <div class="animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+              <span class="mr-4">📚</span> A História do Linux
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="space-y-6">
+                <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                    👨‍💻 Linus Torvalds
+                  </h3>
+                  <p class="text-gray-700">
+                    Estudante finlandês de 21 anos que criou o Linux em 1991
+                    como projeto pessoal
+                  </p>
+                </div>
+
+                <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                    🎯 Objetivo Original
+                  </h3>
+                  <p class="text-gray-700">
+                    Criar um sistema operacional livre e gratuito, inspirado no
+                    Unix
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                  ⏰ Linha do Tempo
+                </h3>
+                <div class="space-y-4">
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-16 h-16 bg-red-200 rounded-full flex items-center justify-center font-bold text-red-800"
+                    >
+                      1969
+                    </div>
+                    <div>
+                      <p class="font-semibold">Unix nasce</p>
+                      <p class="text-sm text-gray-600">AT&T Bell Labs</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center font-bold text-blue-800"
+                    >
+                      1983
+                    </div>
+                    <div>
+                      <p class="font-semibold">Projeto GNU</p>
+                      <p class="text-sm text-gray-600">Richard Stallman</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-16 h-16 bg-green-200 rounded-full flex items-center justify-center font-bold text-green-800"
+                    >
+                      1991
+                    </div>
+                    <div>
+                      <p class="font-semibold">Linux 0.01</p>
+                      <p class="text-sm text-gray-600">Linus Torvalds</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 3: Software Livre -->
+        <section
+          class="slide p-8 min-h-[600px] bg-gradient-to-br from-pastel-pink to-pastel-orange"
+        >
+          <div class="animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+              <span class="mr-4">🆓</span> Filosofia do Software Livre
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                  🔑 As 4 Liberdades Essenciais
+                </h3>
+                <div class="space-y-4">
+                  <div class="flex items-start space-x-3">
+                    <div
+                      class="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center font-bold text-blue-800 text-sm"
+                    >
+                      0
+                    </div>
+                    <div>
+                      <p class="font-semibold">Executar</p>
+                      <p class="text-sm text-gray-600">
+                        Para qualquer propósito
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <div
+                      class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center font-bold text-green-800 text-sm"
+                    >
+                      1
+                    </div>
+                    <div>
+                      <p class="font-semibold">Estudar</p>
+                      <p class="text-sm text-gray-600">
+                        Como funciona e adaptar
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <div
+                      class="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center font-bold text-yellow-800 text-sm"
+                    >
+                      2
+                    </div>
+                    <div>
+                      <p class="font-semibold">Redistribuir</p>
+                      <p class="text-sm text-gray-600">Compartilhar cópias</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <div
+                      class="w-8 h-8 bg-purple-200 rounded-full flex items-center justify-center font-bold text-purple-800 text-sm"
+                    >
+                      3
+                    </div>
+                    <div>
+                      <p class="font-semibold">Melhorar</p>
+                      <p class="text-sm text-gray-600">
+                        E distribuir melhorias
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-6">
+                <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                    🆚 Software Livre vs Open Source
+                  </h3>
+                  <div class="space-y-3">
+                    <div class="p-3 bg-blue-50 rounded-lg">
+                      <p class="font-semibold text-blue-800">Software Livre</p>
+                      <p class="text-sm text-blue-700">
+                        Foco na liberdade do usuário
+                      </p>
+                    </div>
+                    <div class="p-3 bg-green-50 rounded-lg">
+                      <p class="font-semibold text-green-800">Open Source</p>
+                      <p class="text-sm text-green-700">
+                        Foco na metodologia de desenvolvimento
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-gradient-to-r from-yellow-100 to-orange-100 p-6 rounded-xl border-l-4 border-yellow-400"
+                >
+                  <h4 class="font-semibold text-gray-800 mb-2">
+                    💡 Curiosidade
+                  </h4>
+                  <p class="text-gray-700 text-sm">
+                    O Linux alimenta 96% dos servidores web do mundo e está
+                    presente em smartphones Android!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 4: Características Técnicas -->
+        <section
+          class="slide p-8 min-h-[600px] bg-gradient-to-br from-pastel-purple to-pastel-blue"
+        >
+          <div class="animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+              <span class="mr-4">⚙️</span> Características Técnicas
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="md:col-span-2 bg-white/80 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                  🏗️ Arquitetura do Sistema
+                </h3>
+                <div
+                  class="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm"
+                >
+                  <div class="mb-2">┌─ Aplicações do Usuário</div>
+                  <div class="mb-2">├─ Interface Gráfica (GUI)</div>
+                  <div class="mb-2">├─ Shell / Terminal</div>
+                  <div class="mb-2">├─ Bibliotecas do Sistema</div>
+                  <div class="mb-2">├─ Chamadas do Sistema</div>
+                  <div class="mb-2">
+                    └─
+                    <span class="text-yellow-400 font-bold">KERNEL LINUX</span>
+                  </div>
+                  <div class="ml-4 text-gray-400">
+                    <div>├─ Gerenciamento de Processos</div>
+                    <div>├─ Gerenciamento de Memória</div>
+                    <div>├─ Sistema de Arquivos</div>
+                    <div>└─ Drivers de Hardware</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div class="bg-white/80 p-4 rounded-xl shadow-md text-center">
+                  <div class="text-2xl mb-2">🔄</div>
+                  <h4 class="font-semibold text-gray-800">Multitarefa</h4>
+                  <p class="text-xs text-gray-600">
+                    Múltiplos processos simultâneos
+                  </p>
+                </div>
+                <div class="bg-white/80 p-4 rounded-xl shadow-md text-center">
+                  <div class="text-2xl mb-2">👥</div>
+                  <h4 class="font-semibold text-gray-800">Multiusuário</h4>
+                  <p class="text-xs text-gray-600">
+                    Vários usuários ao mesmo tempo
+                  </p>
+                </div>
+                <div class="bg-white/80 p-4 rounded-xl shadow-md text-center">
+                  <div class="text-2xl mb-2">🛡️</div>
+                  <h4 class="font-semibold text-gray-800">Seguro</h4>
+                  <p class="text-xs text-gray-600">
+                    Sistema robusto de permissões
+                  </p>
+                </div>
+                <div class="bg-white/80 p-4 rounded-xl shadow-md text-center">
+                  <div class="text-2xl mb-2">🔧</div>
+                  <h4 class="font-semibold text-gray-800">Portável</h4>
+                  <p class="text-xs text-gray-600">
+                    Funciona em várias arquiteturas
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 5: Distribuições -->
+        <section
+          class="slide p-8 min-h-[600px] bg-gradient-to-br from-pastel-green to-pastel-blue"
+        >
+          <div class="animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+              <span class="mr-4">📦</span> Distribuições Linux
+            </h2>
+
+            <div class="mb-8 bg-white/80 p-6 rounded-xl shadow-md">
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                🎁 O que é uma Distribuição?
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Uma distribuição é o Linux completo: kernel + programas +
+                interface gráfica, tudo empacotado e pronto para usar!
+              </p>
+
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <p class="text-sm text-blue-800">
+                  <strong>Analogia:</strong> Se o Linux fosse um carro, as
+                  distribuições seriam diferentes modelos: sedan, SUV, esportivo
+                  - todos com o mesmo motor (kernel), mas com características
+                  diferentes!
+                </p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div
+                class="bg-red-100 p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform cursor-pointer"
+              >
+                <div
+                  class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl"
+                >
+                  🔴
+                </div>
+                <h4 class="font-semibold text-gray-800">Red Hat</h4>
+                <p class="text-sm text-gray-600 mt-2">RHEL, Fedora, CentOS</p>
+                <p class="text-xs text-gray-500 mt-1">Empresarial</p>
+              </div>
+
+              <div
+                class="bg-orange-100 p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform cursor-pointer"
+              >
+                <div
+                  class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl"
+                >
+                  🟠
+                </div>
+                <h4 class="font-semibold text-gray-800">Debian</h4>
+                <p class="text-sm text-gray-600 mt-2">Ubuntu, Mint, Kali</p>
+                <p class="text-xs text-gray-500 mt-1">Estável</p>
+              </div>
+
+              <div
+                class="bg-green-100 p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform cursor-pointer"
+              >
+                <div
+                  class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl"
+                >
+                  🟢
+                </div>
+                <h4 class="font-semibold text-gray-800">SUSE</h4>
+                <p class="text-sm text-gray-600 mt-2">openSUSE, SLES</p>
+                <p class="text-xs text-gray-500 mt-1">Corporativo</p>
+              </div>
+
+              <div
+                class="bg-blue-100 p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform cursor-pointer"
+              >
+                <div
+                  class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl"
+                >
+                  🔵
+                </div>
+                <h4 class="font-semibold text-gray-800">Arch</h4>
+                <p class="text-sm text-gray-600 mt-2">Arch, Manjaro</p>
+                <p class="text-xs text-gray-500 mt-1">Avançado</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 6: Ubuntu -->
+        <section
+          class="slide p-8 min-h-[600px] bg-gradient-to-br from-pastel-orange to-pastel-yellow"
+        >
+          <div class="animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+              <span class="mr-4">🟠</span> Ubuntu - Nossa Escolha
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="space-y-6">
+                <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                    🎯 Por que Ubuntu?
+                  </h3>
+                  <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                      <div
+                        class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center"
+                      >
+                        ✓
+                      </div>
+                      <span class="text-gray-700"
+                        >Interface amigável para iniciantes</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div
+                        class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center"
+                      >
+                        ✓
+                      </div>
+                      <span class="text-gray-700"
+                        >Comunidade ativa e suporte</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div
+                        class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center"
+                      >
+                        ✓
+                      </div>
+                      <span class="text-gray-700">Atualizações regulares</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div
+                        class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center"
+                      >
+                        ✓
+                      </div>
+                      <span class="text-gray-700">Ampla compatibilidade</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-xl border-l-4 border-orange-400"
+                >
+                  <h4 class="font-semibold text-gray-800 mb-2">
+                    🌍 Significado
+                  </h4>
+                  <p class="text-gray-700 text-sm">
+                    "Ubuntu" significa
+                    <strong>"humanidade para outros"</strong> em idiomas
+                    africanos - reflete a filosofia de compartilhamento!
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                  📅 Ciclo de Lançamentos
+                </h3>
+
+                <div class="space-y-4">
+                  <div class="p-4 bg-blue-50 rounded-lg">
+                    <h4 class="font-semibold text-blue-800">Versões Normais</h4>
+                    <p class="text-sm text-blue-700">
+                      A cada 6 meses (Abril e Outubro)
+                    </p>
+                    <p class="text-xs text-blue-600">Suporte: 9 meses</p>
+                  </div>
+
+                  <div class="p-4 bg-green-50 rounded-lg">
+                    <h4 class="font-semibold text-green-800">Versões LTS</h4>
+                    <p class="text-sm text-green-700">
+                      A cada 2 anos (Abril dos anos pares)
+                    </p>
+                    <p class="text-xs text-green-600">Suporte: 5 anos</p>
+                  </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-semibold text-gray-800 mb-2">
+                    🏷️ Nomenclatura
+                  </h4>
+                  <p class="text-sm text-gray-700">
+                    Exemplo: Ubuntu 22.04 LTS "Jammy Jellyfish"
+                  </p>
+                  <p class="text-xs text-gray-600">
+                    22.04 = Ano 2022, Mês 04 (Abril)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 7: Interface Gráfica -->
+        <section
+          class="slide p-8 min-h-[600px] bg-gradient-to-br from-pastel-purple to-pastel-pink"
+        >
+          <div class="animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+              <span class="mr-4">🖥️</span> Interface Gráfica
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                  🏠 Ambientes Desktop
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  No Linux, você pode escolher sua interface gráfica!
+                </p>
+
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="p-3 bg-purple-50 rounded-lg text-center">
+                    <div class="text-2xl mb-1">🎨</div>
+                    <h4 class="font-semibold text-purple-800 text-sm">GNOME</h4>
+                    <p class="text-xs text-purple-600">Moderno</p>
+                  </div>
+                  <div class="p-3 bg-blue-50 rounded-lg text-center">
+                    <div class="text-2xl mb-1">⚙️</div>
+                    <h4 class="font-semibold text-blue-800 text-sm">KDE</h4>
+                    <p class="text-xs text-blue-600">Customizável</p>
+                  </div>
+                  <div class="p-3 bg-green-50 rounded-lg text-center">
+                    <div class="text-2xl mb-1">⚡</div>
+                    <h4 class="font-semibold text-green-800 text-sm">XFCE</h4>
+                    <p class="text-xs text-green-600">Leve</p>
+                  </div>
+                  <div class="p-3 bg-orange-50 rounded-lg text-center">
+                    <div class="text-2xl mb-1">🪟</div>
+                    <h4 class="font-semibold text-orange-800 text-sm">
+                      Cinnamon
+                    </h4>
+                    <p class="text-xs text-orange-600">Familiar</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                  🎨 Interface Ubuntu (GNOME)
+                </h3>
+
+                <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                  <div
+                    class="bg-gray-800 h-8 rounded-t-lg flex items-center px-3"
+                  >
+                    <div class="flex space-x-1">
+                      <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                    <div class="flex-1 text-center text-white text-xs">
+                      Ubuntu Desktop
+                    </div>
+                  </div>
+                  <div class="bg-purple-200 h-32 rounded-b-lg relative">
+                    <div
+                      class="absolute top-2 left-2 right-2 bg-gray-700 h-6 rounded flex items-center px-2"
+                    >
+                      <span class="text-white text-xs">Barra Superior</span>
+                    </div>
+                    <div
+                      class="absolute bottom-2 left-2 w-8 bg-gray-600 h-20 rounded flex flex-col items-center justify-center"
+                    >
+                      <span class="text-white text-xs transform -rotate-90"
+                        >Dock</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-2 text-sm">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-4 h-4 bg-gray-700 rounded"></div>
+                    <span class="text-gray-700"
+                      >Barra Superior: Relógio, indicadores, menu</span
+                    >
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <div class="w-4 h-4 bg-gray-600 rounded"></div>
+                    <span class="text-gray-700"
+                      >Dock: Aplicativos favoritos</span
+                    >
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <div class="w-4 h-4 bg-purple-400 rounded"></div>
+                    <span class="text-gray-700"
+                      >Activities: Visão geral das janelas</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 8: Terminal -->
+        <section
+          class="slide p-8 min-h-[600px] bg-gradient-to-br from-pastel-blue to-pastel-green"
+        >
+          <div class="animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+              <span class="mr-4">💻</span> Terminal e Linha de Comando
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="space-y-6">
+                <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                    🎯 Por que usar o Terminal?
+                  </h3>
+                  <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                      <span class="text-2xl">⚡</span>
+                      <div>
+                        <p class="font-semibold text-gray-800">Velocidade</p>
+                        <p class="text-sm text-gray-600">
+                          Tarefas mais rápidas que interface gráfica
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <span class="text-2xl">🤖</span>
+                      <div>
+                        <p class="font-semibold text-gray-800">Automação</p>
+                        <p class="text-sm text-gray-600">
+                          Scripts para automatizar processos
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <span class="text-2xl">🎛️</span>
+                      <div>
+                        <p class="font-semibold text-gray-800">
+                          Controle Total
+                        </p>
+                        <p class="text-sm text-gray-600">
+                          Acesso a todas as funcionalidades
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-gradient-to-r from-blue-100 to-green-100 p-6 rounded-xl border-l-4 border-blue-400"
+                >
+                  <h4 class="font-semibold text-gray-800 mb-2">
+                    ⌨️ Atalho Rápido
+                  </h4>
+                  <p class="text-gray-700">
+                    No Ubuntu:
+                    <kbd class="bg-gray-200 px-2 py-1 rounded text-sm"
+                      >Ctrl + Alt + T</kbd
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                  🖥️ Simulador de Terminal
+                </h3>
+                <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+                  <div class="text-green-400 mb-2">usuario@ubuntu:~$</div>
+                  <div class="text-white mb-1">$ whoami</div>
+                  <div class="text-blue-300 mb-2">usuario</div>
+                  <div class="text-white mb-1">$ pwd</div>
+                  <div class="text-blue-300 mb-2">/home/usuario</div>
+                  <div class="text-white mb-1">$ ls</div>
+                  <div class="text-blue-300 mb-2">
+                    Documentos Downloads Imagens
+                  </div>
+                  <div class="text-green-400 animate-pulse">
+                    usuario@ubuntu:~$ _
+                  </div>
+                </div>
+
+                <div class="mt-4 p-3 bg-yellow-50 rounded-lg">
+                  <p class="text-sm text-yellow-800">
+                    <strong>Dica:</strong> O terminal pode parecer intimidador
+                    no início, mas é uma ferramenta poderosa que todo
+                    profissional de TI deve dominar!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 9: Comandos Básicos -->
+        <section
+          class="slide p-8 min-h-[600px] bg-gradient-to-br from-pastel-yellow to-pastel-orange"
+        >
+          <div class="animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+              <span class="mr-4">⌨️</span> Comandos Essenciais
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                  📁 Navegação e Arquivos
+                </h3>
+                <div
+                  class="bg-gray-900 rounded-lg p-4 font-mono text-sm space-y-2"
+                >
+                  <div class="flex justify-between">
+                    <span class="text-green-400">pwd</span>
+                    <span class="text-gray-400"># Onde estou?</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-green-400">ls</span>
+                    <span class="text-gray-400"># Listar arquivos</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-green-400">cd pasta</span>
+                    <span class="text-gray-400"># Entrar na pasta</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-green-400">cd ..</span>
+                    <span class="text-gray-400"># Voltar</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-green-400">mkdir nova</span>
+                    <span class="text-gray-400"># Criar pasta</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-green-400">cp origem destino</span>
+                    <span class="text-gray-400"># Copiar</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-green-400">mv origem destino</span>
+                    <span class="text-gray-400"># Mover</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                  ℹ️ Informações do Sistema
+                </h3>
+                <div
+                  class="bg-gray-900 rounded-lg p-4 font-mono text-sm space-y-2"
+                >
+                  <div class="flex justify-between">
+                    <span class="text-blue-400">whoami</span>
+                    <span class="text-gray-400"># Meu usuário</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-blue-400">date</span>
+                    <span class="text-gray-400"># Data e hora</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-blue-400">uptime</span>
+                    <span class="text-gray-400"># Tempo ligado</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-blue-400">df -h</span>
+                    <span class="text-gray-400"># Espaço em disco</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-blue-400">free -h</span>
+                    <span class="text-gray-400"># Memória RAM</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-blue-400">ps aux</span>
+                    <span class="text-gray-400"># Processos</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mt-6 bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-xl border-l-4 border-green-400"
+            >
+              <h4 class="font-semibold text-gray-800 mb-2">
+                💡 Dicas Importantes
+              </h4>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <p class="text-gray-700">
+                    • Use <kbd class="bg-gray-200 px-1 rounded">Tab</kbd> para
+                    autocompletar
+                  </p>
+                  <p class="text-gray-700">
+                    • <kbd class="bg-gray-200 px-1 rounded">↑</kbd> para comando
+                    anterior
+                  </p>
+                </div>
+                <div>
+                  <p class="text-gray-700">
+                    • <kbd class="bg-gray-200 px-1 rounded">Ctrl+C</kbd> para
+                    cancelar
+                  </p>
+                  <p class="text-gray-700">
+                    •
+                    <kbd class="bg-gray-200 px-1 rounded">man comando</kbd> para
+                    ajuda
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 10: Estrutura de Diretórios -->
+        <section
+          class="slide p-8 min-h-[600px] bg-gradient-to-br from-pastel-green to-pastel-purple"
+        >
+          <div class="animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+              <span class="mr-4">📂</span> Estrutura de Diretórios
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                  🌳 Árvore do Sistema
+                </h3>
+                <div
+                  class="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm"
+                >
+                  <div class="space-y-1">
+                    <div class="text-yellow-400 font-bold">/ (raiz)</div>
+                    <div>
+                      ├── bin/
+                      <span class="text-gray-400"># Comandos essenciais</span>
+                    </div>
+                    <div>
+                      ├── boot/
+                      <span class="text-gray-400"># Arquivos de boot</span>
+                    </div>
+                    <div>
+                      ├── dev/ <span class="text-gray-400"># Dispositivos</span>
+                    </div>
+                    <div>
+                      ├── etc/
+                      <span class="text-gray-400"># Configurações</span>
+                    </div>
+                    <div>
+                      ├── home/ <span class="text-gray-400"># Usuários</span>
+                    </div>
+                    <div>│ └── usuario/</div>
+                    <div>
+                      ├── lib/ <span class="text-gray-400"># Bibliotecas</span>
+                    </div>
+                    <div>
+                      ├── media/ <span class="text-gray-400"># USB, CD</span>
+                    </div>
+                    <div>
+                      ├── opt/
+                      <span class="text-gray-400"># Software opcional</span>
+                    </div>
+                    <div>
+                      ├── proc/ <span class="text-gray-400"># Processos</span>
+                    </div>
+                    <div>
+                      ├── root/
+                      <span class="text-gray-400"># Casa do root</span>
+                    </div>
+                    <div>
+                      ├── tmp/ <span class="text-gray-400"># Temporários</span>
+                    </div>
+                    <div>
+                      ├── usr/ <span class="text-gray-400"># Programas</span>
+                    </div>
+                    <div>
+                      └── var/
+                      <span class="text-gray-400"># Dados variáveis</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-6">
+                <div class="bg-white/80 p-6 rounded-xl shadow-md">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                    🏠 Diretórios Importantes
+                  </h3>
+                  <div class="space-y-3">
+                    <div class="p-3 bg-blue-50 rounded-lg">
+                      <h4 class="font-semibold text-blue-800">/home/usuario</h4>
+                      <p class="text-sm text-blue-700">
+                        Sua pasta pessoal (como "Meus Documentos")
+                      </p>
+                    </div>
+                    <div class="p-3 bg-green-50 rounded-lg">
+                      <h4 class="font-semibold text-green-800">/etc</h4>
+                      <p class="text-sm text-green-700">
+                        Configurações do sistema
+                      </p>
+                    </div>
+                    <div class="p-3 bg-yellow-50 rounded-lg">
+                      <h4 class="font-semibold text-yellow-800">/usr/bin</h4>
+                      <p class="text-sm text-yellow-700">
+                        Programas instalados
+                      </p>
+                    </div>
+                    <div class="p-3 bg-red-50 rounded-lg">
+                      <h4 class="font-semibold text-red-800">/var/log</h4>
+                      <p class="text-sm text-red-700">
+                        Arquivos de log do sistema
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-gradient-to-r from-purple-100 to-pink-100 p-6 rounded-xl border-l-4 border-purple-400"
+                >
+                  <h4 class="font-semibold text-gray-800 mb-2">
+                    🔑 Conceito Fundamental
+                  </h4>
+                  <p class="text-gray-700 text-sm">
+                    No Linux, <strong>tudo é arquivo</strong>! Dispositivos,
+                    processos, configurações - tudo pode ser acessado como
+                    arquivo no sistema.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
